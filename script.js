@@ -1,6 +1,6 @@
 const container = document.querySelector("#container");
 
-drawGrid(5);
+drawGrid(16);
 
 function drawGrid(size) {
     for (let i = 0; i < (size * size); i++) {

@@ -1,8 +1,8 @@
 #container {
     display: grid;
     --grid-size: 0;
-    grid-template-rows: repeat(var(--grid-size), 100px);
-    grid-template-columns: repeat(var(--grid-size), 100px);
+    grid-template-rows: repeat(var(--grid-size), auto);
+    grid-template-columns: repeat(var(--grid-size), auto);
 
 }
 
