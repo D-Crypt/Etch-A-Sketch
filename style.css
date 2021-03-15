@@ -1,12 +1,12 @@
-#container {
+.container {
     display: grid;
     --grid-size: 0;
-    grid-template-rows: repeat(var(--grid-size), auto);
-    grid-template-columns: repeat(var(--grid-size), auto);
+    grid-template-rows: repeat(var(--grid-size), 1fr);
+    grid-template-columns: repeat(var(--grid-size), 1fr);
 
 }
 
-#container > div {
+.container > div {
     border: 1px solid black;
     text-align: center;
 }
