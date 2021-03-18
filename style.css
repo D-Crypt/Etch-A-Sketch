@@ -3,12 +3,14 @@
     --grid-size: 0;
     grid-template-rows: repeat(var(--grid-size), 1fr);
     grid-template-columns: repeat(var(--grid-size), 1fr);
-    margin: 10rem;
+    margin: 20rem;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .container > div {
     border: 1px solid #000000;
-    text-align: center; 
+    text-align: center;
 }
 
 .container > div::before {
@@ -16,6 +18,8 @@
     padding-top: 100%;
     content: "";
 }
+
+/* TODO: Fit grid to screen
 
 
 /*.grid-container {

@@ -10,3 +10,5 @@ function drawGrid(size) {
         container.appendChild(cell);
     }
 }
+
+//const cells = document.querySelectorAll("div");
