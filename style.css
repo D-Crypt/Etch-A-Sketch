@@ -3,7 +3,8 @@
     --grid-size: 0;
     grid-template-rows: repeat(var(--grid-size), 1fr);
     grid-template-columns: repeat(var(--grid-size), 1fr);
-
+    margin: 10rem;
+    
 }
 
 .container > div {
