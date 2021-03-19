@@ -5,10 +5,15 @@ drawGrid(16);
 function drawGrid(size) {
     for (let i = 0; i < (size * size); i++) {
         container.style.setProperty("--grid-size", size);
-        let cell = document.createElement("div");
+        const gridCell = document.createElement("div");
+        gridCell.className = "test";
         //cell.textContent = (i + 1);
-        container.appendChild(cell);
+        container.appendChild(gridCell);
     }
 }
 
-//const cells = document.querySelectorAll("div");
+const gridCells = document.querySelector(".test");
+
+gridCells.addEventListener("click", () => {
+    console.log("Success!");
+})
