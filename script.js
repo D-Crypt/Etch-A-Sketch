@@ -14,8 +14,13 @@ drawGrid(16);
 
 const gridCells = document.querySelectorAll(".gridCell");
 
-gridCells.forEach((gridCells) => {
-    gridCells.addEventListener("mouseover", () => {
-        gridCells.style.backgroundcolor = "blue";
-    })
-});
+function colourCells() {
+    gridCells.forEach((gridCells) => {
+        gridCells.addEventListener("mouseover", () => {
+            //gridCells.style.backgroundcolor = "blue";
+            console.log("Success");
+        })
+    });
+}
+
+colourCells();
