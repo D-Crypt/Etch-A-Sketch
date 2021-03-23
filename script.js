@@ -29,7 +29,6 @@ const gridCells = document.querySelectorAll(".gridCell");
 function colourCells() {
     gridCells.forEach((gridCells) => {
         gridCells.addEventListener("mouseover", () => {
-            //gridCells.style.backgroundcolor = "blue";
             console.log("Success");
         })
     });

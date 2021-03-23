@@ -2,7 +2,9 @@
     display: grid;
     --grid-size: 0;
     grid-template-columns: repeat(var(--grid-size), auto);
-    /* TODO: Fit grid to screen
+    /*height: 98vh;*/
+    max-height: 500px;
+    max-width: 500px;
     /*margin: 20rem;
     margin-top: auto;
     margin-bottom: auto;*/
@@ -15,6 +17,6 @@
 
 .container > div::before {
     display: block;
-    padding-top: 100%;
+    padding-bottom: 100%;
     content: "";
 }
