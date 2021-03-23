@@ -1,11 +1,11 @@
 .container {
     display: grid;
     --grid-size: 0;
-    grid-template-rows: repeat(var(--grid-size), 1fr);
-    grid-template-columns: repeat(var(--grid-size), 1fr);
-    margin: 20rem;
+    grid-template-columns: repeat(var(--grid-size), auto);
+    /* TODO: Fit grid to screen
+    /*margin: 20rem;
     margin-top: auto;
-    margin-bottom: auto;
+    margin-bottom: auto;*/
 }
 
 .container > div {
@@ -18,20 +18,3 @@
     padding-top: 100%;
     content: "";
 }
-
-/* TODO: Fit grid to screen
-
-
-/*.grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    background-color: #2196F3;
-    padding: 10px;
-  }
-  .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    font-size: 30px;
-    text-align: center;
-  }*/

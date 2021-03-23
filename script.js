@@ -1,5 +1,18 @@
 const container = document.querySelector(".container");
 
+function promptGridSize() {
+    let gridSize = prompt("Enter grid size (1-100): ", "16")
+
+    /* TODO: Check for integer inputs only. */
+
+    if (gridSize <= 0 || gridSize > 100) {
+        alert("Invalid. Grid size must be between 1 and 100.");
+        promptGridSize();
+    } else {
+        drawGrid(gridSize);
+    }
+}
+
 function drawGrid(size) {
     container.style.setProperty("--grid-size", size);
 
@@ -10,8 +23,7 @@ function drawGrid(size) {
     }
 }
 
-drawGrid(16);
-
+promptGridSize();
 const gridCells = document.querySelectorAll(".gridCell");
 
 function colourCells() {
