@@ -1,5 +1,6 @@
 const container = document.querySelector(".container");
 const reset = document.querySelector("#reset");
+const newGridBtn = document.querySelector('#newGrid');
 
 function promptGridSize() {
     let gridSize = prompt("Enter grid size (1-100): ", "16")
@@ -44,3 +45,14 @@ function resetGrid() {
 }
 
 resetGrid();
+
+/* BUG: Repeat promptGridSize() calls result in duplicate grids.
+        Maybe try modifying drawGrid method to account for pre-drawn grid? */
+
+function newGrid() {
+    newGridBtn.addEventListener("click", () => {
+        promptGridSize();
+    });
+}
+
+newGrid();
