@@ -3,9 +3,7 @@ const container = document.querySelector(".container");
 function promptGridSize() {
     let gridSize = prompt("Enter grid size (1-100): ", "16")
 
-    /* TODO: Check for integer inputs only. */
-
-    if (gridSize <= 0 || gridSize > 100) {
+    if (gridSize < 1 || gridSize > 100 || !Number.isInteger(+gridSize)) {
         alert("Invalid. Grid size must be between 1 and 100.");
         promptGridSize();
     } else {
