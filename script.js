@@ -1,4 +1,5 @@
 const container = document.querySelector(".container");
+const reset = document.querySelector("#reset");
 
 function promptGridSize() {
     let gridSize = prompt("Enter grid size (1-100): ", "16")
@@ -28,9 +29,18 @@ function colourCells() {
     gridCells.forEach((gridCell) => {
         gridCell.addEventListener("mouseover", () => {
             gridCell.style.backgroundColor = "blue";
-            console.log("Success");
-        })
+        });
     });
 }
 
 colourCells();
+
+function resetGrid() {
+    reset.addEventListener("click", () => {
+        gridCells.forEach((gridCell) => {
+            gridCell.style.backgroundColor = "white";
+        });
+    });
+}
+
+resetGrid();
