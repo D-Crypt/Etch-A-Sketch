@@ -27,8 +27,9 @@ promptGridSize();
 const gridCells = document.querySelectorAll(".gridCell");
 
 function colourCells() {
-    gridCells.forEach((gridCells) => {
-        gridCells.addEventListener("mouseover", () => {
+    gridCells.forEach((gridCell) => {
+        gridCell.addEventListener("mouseover", () => {
+            gridCell.style.backgroundColor = "blue";
             console.log("Success");
         })
     });
