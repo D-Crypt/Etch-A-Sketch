@@ -14,12 +14,19 @@ function promptGridSize() {
 }
 
 function drawGrid(size) {
+    clearContainerNodes();
     container.style.setProperty("--grid-size", size);
 
     for (let i = 0; i < (size * size); i++) {
         const gridCell = document.createElement("div");
         gridCell.className = "gridCell";
         container.appendChild(gridCell);
+    }
+}
+
+function clearContainerNodes() {
+    while (container.hasChildNodes()) {
+        container.removeChild(container.lastChild);
     }
 }
 
