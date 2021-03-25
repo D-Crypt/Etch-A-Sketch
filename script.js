@@ -22,6 +22,9 @@ function drawGrid(size) {
         gridCell.className = "gridCell";
         container.appendChild(gridCell);
     }
+
+    gridCells = document.querySelectorAll('.gridCell');
+    colourCells();
 }
 
 function clearContainerNodes() {
@@ -31,8 +34,6 @@ function clearContainerNodes() {
 }
 
 promptGridSize();
-const gridCells = document.querySelectorAll('.gridCell');
-colourCells();
 
 function colourCells() {
     gridCells.forEach((gridCell) => {
@@ -47,15 +48,8 @@ function resetGrid() {
         gridCells.forEach((gridCell) => {
             gridCell.style.backgroundColor = "white";
         });
-    });
-}
-
-resetGrid();
-
-function newGrid() {
-    newGridBtn.addEventListener("click", () => {
         promptGridSize();
     });
 }
 
-newGrid();
+resetGrid();
