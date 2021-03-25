@@ -31,7 +31,8 @@ function clearContainerNodes() {
 }
 
 promptGridSize();
-const gridCells = document.querySelectorAll(".gridCell");
+const gridCells = document.querySelectorAll('.gridCell');
+colourCells();
 
 function colourCells() {
     gridCells.forEach((gridCell) => {
@@ -40,8 +41,6 @@ function colourCells() {
         });
     });
 }
-
-colourCells();
 
 function resetGrid() {
     reset.addEventListener("click", () => {
@@ -52,9 +51,6 @@ function resetGrid() {
 }
 
 resetGrid();
-
-/* BUG: Repeat promptGridSize() calls result in duplicate grids.
-        Maybe try modifying drawGrid method to account for pre-drawn grid? */
 
 function newGrid() {
     newGridBtn.addEventListener("click", () => {
