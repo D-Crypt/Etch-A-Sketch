@@ -1,7 +1,7 @@
 const container = document.querySelector(".container");
 const reset = document.querySelector("#reset");
 const black = document.querySelector("#black");
-const rgb = document.querySelector("#rgb");
+const rgbRadio = document.querySelector("#rgb");
 
 function promptGridSize() {
     let gridSize = prompt("Enter grid size (1-100): ", "16")
@@ -39,7 +39,11 @@ promptGridSize();
 function colourCells() {
     gridCells.forEach((gridCell) => {
         gridCell.addEventListener("mouseover", () => {
-            gridCell.style.backgroundColor = "blue";
+            if (rgbRadio.checked) {
+                gridCell.style.backgroundColor = "rgb(" + [randomRGB(), randomRGB(), randomRGB()].join(",") + ")";
+            } else {
+                gridCell.style.backgroundColor = "black";
+            }
         });
     });
 }
@@ -54,3 +58,7 @@ function resetGrid() {
 }
 
 resetGrid();
+
+function randomRGB() {
+    return Math.floor(Math.random() * 256);
+}
