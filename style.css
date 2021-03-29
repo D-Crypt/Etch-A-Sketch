@@ -2,12 +2,8 @@
     display: grid;
     --grid-size: 0;
     grid-template-columns: repeat(var(--grid-size), auto);
-    /*height: 98vh;*/
     max-height: 500px;
     max-width: 500px;
-    /*margin: 20rem;
-    margin-top: auto;
-    margin-bottom: auto;*/
 }
 
 .container > div {

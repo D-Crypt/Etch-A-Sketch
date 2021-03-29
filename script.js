@@ -2,9 +2,18 @@ const container = document.querySelector(".container");
 const reset = document.querySelector("#reset");
 const black = document.querySelector("#black");
 const rgbRadio = document.querySelector("#rgb");
+let gridDrawn = false;
+let promptCancelled = false;
+
+promptGridSize();
+resetGrid();
 
 function promptGridSize() {
-    let gridSize = prompt("Enter grid size (1-100): ", "16")
+    const gridSize = prompt("Enter grid size (1-100): ", "16")
+
+    if (gridSize === null && gridDrawn) {
+        return promptCancelled = true;
+    }
 
     if (gridSize < 1 || gridSize > 100 || !Number.isInteger(+gridSize)) {
         alert("Invalid. Grid size must be between 1 and 100.");
@@ -15,6 +24,7 @@ function promptGridSize() {
 }
 
 function drawGrid(size) {
+    gridDrawn = true;
     clearContainerNodes();
     container.style.setProperty("--grid-size", size);
 
@@ -34,8 +44,6 @@ function clearContainerNodes() {
     }
 }
 
-promptGridSize();
-
 function colourCells() {
     gridCells.forEach((gridCell) => {
         gridCell.addEventListener("mouseover", () => {
@@ -48,17 +56,18 @@ function colourCells() {
     });
 }
 
-function resetGrid() {
-    reset.addEventListener("click", () => {
-        gridCells.forEach((gridCell) => {
-            gridCell.style.backgroundColor = "white";
-        });
-        promptGridSize();
-    });
-}
-
-resetGrid();
-
 function randomRGB() {
     return Math.floor(Math.random() * 256);
+}
+
+function resetGrid() {
+    reset.addEventListener("click", () => {
+        promptGridSize();
+
+        if (!promptCancelled) {
+            gridCells.forEach((gridCell) => {
+                gridCell.style.backgroundColor = "white";
+            });
+        }
+    });
 }
