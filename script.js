@@ -1,5 +1,7 @@
 const container = document.querySelector(".container");
 const reset = document.querySelector("#reset");
+const black = document.querySelector("#black");
+const rgb = document.querySelector("#rgb");
 
 function promptGridSize() {
     let gridSize = prompt("Enter grid size (1-100): ", "16")
